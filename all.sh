@@ -2,10 +2,9 @@
 
 dir="$(dirname ${BASH_SOURCE[0]})"
 
-cd "$dir"
-
 # python utility commands
-. ./python.sh
+. "$dir"/python.sh
 
 # general shell utils
-. ./shell.sh
+. "$dir"//shell.sh
+
