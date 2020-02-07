@@ -3,7 +3,7 @@
 __link_bashrc() {
 	os="$(uname -s)"
 	if [[ "$os" =~ Darwin.* ]]; then
-		ln -s -f "$HOME/.bash_profile" "$HOME/.bashrc"
+		ln -s "$HOME/.bash_profile" "$HOME/.bashrc"
 	fi
 }
 
@@ -11,4 +11,8 @@ __link_bashrc() {
 
 rc() {
 	vi "$HOME/.bashrc" && . "$HOME/.bashrc"
+}
+
+r() {
+	. "$HOME/.bashrc"
 }
