@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# shell commands to make python version management easier
+# shell commands to make managing python projects easier
 #
 default_python_version=python
 default_virtualenv_name=venv
@@ -8,7 +8,10 @@ default_virtualenv_name=venv
 v() {
 	version="${1:-$default_python_version}"
 	path="${2:-$default_virtualenv_name}"
-	virtualenv --python "$version" "$path"
+	if [ ! -d "$path" ]; then
+		virtualenv --python "$version" "$path"
+	fi
+	. "$path/bin/activate"
 }
 
 v3() {
