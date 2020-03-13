@@ -16,3 +16,11 @@ rc() {
 r() {
 	. "$HOME/.bashrc"
 }
+
+c() {
+	clear
+}
+
+s() {
+	stty sane && clear
+}
